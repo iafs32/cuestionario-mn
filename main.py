@@ -5,7 +5,7 @@ questions = [
         'Correcta': 'd'
     },
     {
-        'Pregunta': '¿Does she give a fo?',
+        'Pregunta': 'Does she give a fo?',
         'Respuestas': ['a) si', 'b) no', 'c) tal vez', 'd) sabe que la quiero'],
         'Correcta': 'b'
     }
@@ -24,4 +24,4 @@ for question in questions:
     else:
         print('La respuesta correcta era:', question['Correcta'])
     
-print('Tuviste', score, 'aciertos') if score != 1 else print('Tuviste', score, 'acierto')
+print('Tuviste', score, 'aciertos de', len(questions)) if score != 1 else print('Tuviste', score, 'acierto de', len(questions))
