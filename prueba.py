@@ -11,10 +11,8 @@ def exam(window, actual_row, questions):
     final_score = StringVar()
     final_score.set('0')
 
-    for _ in questions:
-        options.append(IntVar())
-
     for question in questions:
+        options.append(IntVar())
         Label(window, text=question['Pregunta']).grid(column=0, row=row_counter)
         row_counter += 1
         for answer in question['Respuestas']:
