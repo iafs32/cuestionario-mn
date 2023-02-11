@@ -25,8 +25,6 @@ prueba = Tk()
 
 prueba.geometry('1250x630+10+10')
 
-opcion = IntVar()
-
 frm = ttk.Frame(prueba, padding=10)
 frm.grid()
 ttk.Label(frm, text="Hello World").grid(column=0, row=0)
