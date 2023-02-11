@@ -1,27 +1,37 @@
+from tkinter import *
+from tkinter import ttk
+from prueba import exam
+
 questions = [
     {
         'Pregunta': '¿Ella fuma mari sola?',
         'Respuestas': ['a) si', 'b) no', 'c) tal vez', 'd) popola'],
-        'Correcta': 'd'
+        'Correcta': 4
     },
     {
         'Pregunta': 'Does she give a fo?',
         'Respuestas': ['a) si', 'b) no', 'c) tal vez', 'd) sabe que la quiero'],
-        'Correcta': 'b'
+        'Correcta': 6
+    },
+    {
+        'Pregunta': 'No se que poner',
+        'Respuestas': ['a) ama', 'b) me', 'c) mie', 'd) si'],
+        'Correcta': 9
     }
 ]
 
-score = 0
 
-for question in questions:
-    print(question['Pregunta'])
-    for answer in question['Respuestas']:
-        print(answer)
-    user_answer = input('Ingresa el inciso correcto: ').lower()
-    if user_answer == question['Correcta']:
-        print('Correcto')
-        score += 1
-    else:
-        print('La respuesta correcta era:', question['Correcta'])
-    
-print('Tuviste', score, 'aciertos de', len(questions)) if score != 1 else print('Tuviste', score, 'acierto de', len(questions))
+prueba = Tk()
+
+prueba.geometry('1250x630+10+10')
+
+opcion = IntVar()
+
+frm = ttk.Frame(prueba, padding=10)
+frm.grid()
+ttk.Label(frm, text="Hello World").grid(column=0, row=0)
+ttk.Button(frm, text='Quit', command=prueba.destroy).grid(column=1, row=0)
+
+exam(prueba, 2, questions)
+
+prueba.mainloop()
