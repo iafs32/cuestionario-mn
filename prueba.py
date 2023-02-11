@@ -11,7 +11,7 @@ def exam(window, actual_row, questions):
     final_score = StringVar()
     final_score.set('0')
 
-    for _ in range(len(questions)):
+    for _ in questions:
         options.append(IntVar())
 
     for question in questions:
