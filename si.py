@@ -1,6 +1,4 @@
-from tkinter import *
-from tkinter import ttk
-from prueba import exam
+import os
 
 questions = [
     {
@@ -55,16 +53,15 @@ questions = [
     },
 ]
 
+score = 0
 
-prueba = Tk()
+for question in questions:
+    os.system("cls")
+    print(question['Pregunta'])
+    for answer in question['Respuestas']:
+        print(answer)
+    user_answer = input('Ingresa la respuesta correcta: ')
+    if user_answer == question['Correcta']:
+        score += 1
 
-prueba.geometry('1250x630+10+10')
-
-frm = ttk.Frame(prueba, padding=10)
-frm.grid()
-ttk.Label(frm, text="Hello World").grid(column=0, row=0)
-ttk.Button(frm, text='Quit', command=prueba.destroy).grid(column=1, row=0)
-
-exam(prueba, 2, questions)
-
-prueba.mainloop()
+print(score)
